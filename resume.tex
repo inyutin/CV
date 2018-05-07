@@ -1,0 +1,105 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{marvosym}
+\usepackage{fontspec} 					
+\usepackage{xunicode,xltxtra,url,parskip} 	
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 
+\usepackage{supertabular}
+\usepackage{titlesec}
+
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+\hyphenation{im-pre-se}
+
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+
+\pagestyle{empty} 
+
+\font\fb=''[cmr10]'' 
+
+
+\par{\centering
+		{\Huge Dmitriy \textsc{Inyutin}
+	}\bigskip\par}
+
+
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Date of Birth:} & 05 August 1998 \\
+    \textsc{Address:}   & Moscow, Russia \\
+    \textsc{Phone:}     & +7 (915) 433 6070 \\
+    \textsc{email:}     &  \href{mailto:alessandro.plasmati@gmail.com}{inyutin.da@phystech.edu} \\
+    \textsc{github:}    &  \href{https://github.com/bunnyhole}{bunnyhole} \\
+\end{tabular}
+
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+    \textsc{Summer 2017} & Teacher at local Technopark, Astrakhan\\&\footnotesize{I taught Python language for high school students} \\
+\end{tabular}
+
+\section{Hackathons}
+\begin{tabular}{rl}
+\textsc{March 2018}  &  \textbf{Global Changers 2}, Moscow\\
+& \small\emph{}\textbf{Winner}\\
+ \textsc{April 2018}  &  \textbf{Birth.Hack}, Moscow\\
+& \small\emph{}Member\\
+\textsc{March 2018}  &  \textbf{Global Changers 1}, Moscow\\
+& \small\emph{}\textbf{Winner}\\
+\textsc{October 2017}  & \textbf{mABBYYlity}, Moscow\\
+& \small\emph{}Member\\
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{April 2018}  & Bachelor, \textbf{Moscow Institute Of Physics And Technologies}, Moscow\\
+& \small\emph{}Department: Innovations and High Technologies\\
+\end{tabular}
+
+\section{Courses}
+\begin{tabular}{rl}
+ \textsc{Coursera:}  & \textbf{Machine learning and data analysis}\\
+& \small\emph{}Course by Yandex and MIPT\\
+ \textsc{Coursera:}  & \textbf{Game Theory}\\
+& \small\emph{}Course by MIPT\\
+\end{tabular}
+
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Russian:}&Mothertongue\\
+\textsc{English:}&C1 Advanced\\
+\end{tabular}
+
+\section{Skills}
+\begin{tabular}{rl}
+ Math:& \textsc{Calculus, Linear Algebra, Discrete Analysis, Group Theory, Math logic} \\
+Programming:& \textsc{Python, C++, Algorithms, Git, Linux}\\
+Web:& \textsc{HTML, CSS,  JS, Design, UX/UI}\\
+\end{tabular}
+
+\end{document}
+ 
