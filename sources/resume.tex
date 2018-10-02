@@ -1,0 +1,163 @@
+\documentclass[fontsize=11pt]{article}
+    \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
+\usepackage[margin=0.75in]{geometry}
+  \textheight=700px
+\usepackage{url}
+\usepackage{lmodern} % Allow arbitrary font sizes
+\usepackage{textcomp}
+
+%% Define a new 'modern' style for the url package that will use a smaller font.
+\makeatletter
+\def\url@modernstyle{
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
+\makeatother
+\urlstyle{modern} %% And use the newly defined style.
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{                 % Change font of \section command
+  \usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+    \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+    \par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                      % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\SkillsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\AwardsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\EducationEntry}[4]{
+    \noindent \textbf{#1} \hfill      % Study
+    \colorbox{Black}{
+      \parbox{8.5em}{
+      \hfill\color{White}#2}} \par  % Duration
+    \noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Jobname
+    \colorbox{Black}{%
+      \parbox{9em}{%
+      \hfill\color{White}#2}} \par   % Duration
+        \noindent \textit{#3} \par        % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent \textit{#3} \hfill {#2} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\AwardEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent \textit{#3} \hfill {#2} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+    \begin{document}
+
+\MyName{Dmitry Inyutin}
+\bigskip
+{\small \hfill inyutin.da@phystech.edu | 89154336070 | Moscow | https://github.com/inyutin}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+\EducationEntry
+{Bachelor Computer Science}
+{September 2016 - June 2020}
+{Moscow Institute of Physics and Technology, Moscow}
+%%% Work experience
+%%% ------------------------------------------------------------
+
+\NewPart{Work Experience}{}
+
+\WorkEntry
+{Software Intern}
+{July 2018 - August 2018}
+{Jetbrains, Moscow}
+{\begin{itemize} \itemsep -1pt
+	\item Develop mobile web interface for datalore.io
+	\end{itemize}}
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+\SkillsEntry{Programming Languages}{C++, Js, Python, Go}
+\sepspace
+\SkillsEntry{Knowledge}{Theory of concurrency and distributed systems, Algorithms and Data Structures, Blockchain}
+\SkillsEntry{Tools}{Git, Linux}
+\SkillsEntry{Math}{Calculus, Linear Algebra, Computational Complexity theory, Discrete Analysis, Math Logic}
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Hackathons}{}
+
+\AwardEntry{Cryptobazar №1,}{Winner}
+{Moscow, September 2018}
+{Different applications related to Blockchain: Monitoring system for IoT, Serialization algorithm, Golang Pairing Cryptography implementation}
+\sepspace
+\AwardEntry{Phystech.Genesis,}{Winner}
+{Moscow, September 2018}
+{Android application for Tourists that easily provide you different routes}
+\sepspace
+\AwardEntry{Global Changers 2,}{Winner}
+{Moscow, March 2018}
+{Web-service that creates Customer Journey Maps}
+\sepspace
+\AwardEntry{Birth.Hack,}{Member}
+{Moscow, April 2018}
+{Web-site, where you can watch sport matches with your friends using videochat}
+\sepspace
+\AwardEntry{Global Changers 1,}{Winner}
+{Moscow, March 2018}
+{Censorship-free video platform that rewards users for their social activity on the platform.}
+\sepspace
+\AwardEntry{mABBYYlity,}{Member}
+{Moscow, October 2017}
+{Telegram bot that helps you decide whether to buy this product or not.}
+\
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Other}{}
+\SkillsEntry{Languages}{English, Russian}
+\sepspace
+\SkillsEntry{Nonprofessional interests}{Chess, Basketball}
+\end{document}
