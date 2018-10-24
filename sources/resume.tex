@@ -10,7 +10,7 @@
 \usepackage{url}
 \usepackage{lmodern} % Allow arbitrary font sizes
 \usepackage{textcomp}
-
+\usepackage[hidelinks]{hyperref}
 %% Define a new 'modern' style for the url package that will use a smaller font.
 \makeatletter
 \def\url@modernstyle{
@@ -96,12 +96,12 @@
 
 \MyName{Dmitry Inyutin}
 \bigskip
-{\small \hfill inyutin.da@phystech.edu | 89154336070 | Moscow | https://github.com/inyutin}
+{\small \hfill \href{mailto:gmail.com}{inyutin.da@gmail.com} | 89154336070 | Moscow | \href{https://github.com/inyutin}{github}}
 %%% Education
 %%% ------------------------------------------------------------
 \NewPart{Education}{}
 \EducationEntry
-{Bachelor Computer Science}
+{Applied Math and Computer Science}
 {September 2016 - June 2020}
 {Moscow Institute of Physics and Technology, Moscow}
 %%% Work experience
@@ -114,7 +114,7 @@
 {July 2018 - August 2018}
 {Jetbrains, Moscow}
 {\begin{itemize} \itemsep -1pt
-	\item Develop mobile web interface for datalore.io
+	\item Developed mobile web interface for \href{http://datalore.io}{datalore.io}.
 	\end{itemize}}
 %%% Skills
 %%% ------------------------------------------------------------
@@ -123,7 +123,7 @@
 \sepspace
 \SkillsEntry{Knowledge}{Theory of concurrency and distributed systems, Algorithms and Data Structures, Blockchain}
 \SkillsEntry{Tools}{Git, Linux}
-\SkillsEntry{Math}{Calculus, Linear Algebra, Computational Complexity theory, Discrete Analysis, Math Logic}
+\SkillsEntry{Math}{Calculus, Linear Algebra, Computational Complexity theory, Discrete Analysis}
 
 %%% Awards
 %%% ------------------------------------------------------------
@@ -157,7 +157,7 @@
 %%% Skills
 %%% ------------------------------------------------------------
 \NewPart{Other}{}
-\SkillsEntry{Languages}{English, Russian}
+\SkillsEntry{Languages}{Intermediate English, Native Russian}
 \sepspace
 \SkillsEntry{Nonprofessional interests}{Chess, Basketball}
 \end{document}
